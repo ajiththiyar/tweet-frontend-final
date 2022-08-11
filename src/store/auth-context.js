@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useState } from "react";
 
 const AuthContext = React.createContext({
   token: "",
@@ -31,7 +31,7 @@ export const AuthContextProvider = (props) => {
   const [token, setToken] = useState(initialToken);
   const [user, setUser] = useState(initialUser);
   var userIsLoggedIn = false;
-  if(token==null || token =='null'){
+  if(token===null || token ==='null'){
     userIsLoggedIn = false;
   }
   else{
