@@ -93,7 +93,7 @@ const PostTweet = (props) => {
           onClick={props.hideModal}
           type="button"
         >
-          Cancle
+          Cancel
         </button>
       </form>
     </>

@@ -14,6 +14,9 @@ const getTokenFromLocal = () => {
   const user = JSON.parse(localStorage.getItem("user"));
 
  console.log({ token: initialToken });
+ if(initialToken==null){
+
+ }
 
   return { token: initialToken,  user };
 };
@@ -27,8 +30,13 @@ export const AuthContextProvider = (props) => {
   }
   const [token, setToken] = useState(initialToken);
   const [user, setUser] = useState(initialUser);
-
-  const userIsLoggedIn = !!token;
+  var userIsLoggedIn = false;
+  if(token==null || token =='null'){
+    userIsLoggedIn = false;
+  }
+  else{
+    userIsLoggedIn=true
+  }
 
   const logoutHandler = useCallback(() => {
     console.log("logOut");
